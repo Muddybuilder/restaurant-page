@@ -1,10 +1,14 @@
-import Myimg from "./food.jpg";
-let content = document.getElementById("content");
-content.innerHTML = "<h1>This is restaurant</h1>";
+import "./style.css";
+import { home } from "./home";
+import { about } from "./about";
+import { menu } from "./menu";
 
-let Img = document.createElement("img");
-Img.src = Myimg;
-Img.width = 600;
-Img.height = Img.width;
+home();
 
-content.appendChild(Img);
+const homeElem = document.getElementById("home");
+const aboutElem = document.getElementById("about");
+const menuElem = document.getElementById("menu");
+
+homeElem.addEventListener("click", home);
+aboutElem.addEventListener("click", about);
+menuElem.addEventListener("click", menu);
