@@ -6,7 +6,7 @@ import menu4 from "./imgs/menu4.jpg";
 const menuList = [menu1, menu2, menu3, menu4];
 export function menu() {
   let content = document.getElementById("content");
-  content.innerHTML = "<h1>Choose any, you will love it</h1>";
+  content.innerHTML = "<h1>menu</h1>";
 
   let itemNum = 4;
   for (let idx = 0; idx < itemNum; idx++) {
@@ -27,7 +27,24 @@ function createItem(idx) {
   Img.setAttribute("border-radius", "50%");
 
   let text = document.createElement("p");
-  text.innerText = `This is delicious MENU ${idx + 1}`;
+  let innerText = "";
+  switch (idx) {
+    case 0:
+      innerText = "Pork Ramen";
+      break;
+    case 1:
+      innerText = "Bellybuster sandwich";
+      break;
+    case 2:
+      innerText = "French toast";
+      break;
+    case 3:
+      innerText = "The meat platter";
+      break;
+    default:
+      break;
+  }
+  text.innerText = innerText;
 
   itemBox.appendChild(Img);
   itemBox.appendChild(text);
